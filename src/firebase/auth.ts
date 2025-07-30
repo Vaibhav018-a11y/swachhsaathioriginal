@@ -42,6 +42,11 @@ export const signUpWithEmail = async (
       createdAt: new Date()
     };
 
+    // Remove undefined fields
+    Object.keys(userDoc).forEach(
+      (key) => (userDoc as any)[key] === undefined && delete (userDoc as any)[key]
+    );
+
     await setDoc(doc(db, 'users', userCredential.user.uid), userDoc);
 
     return userCredential;

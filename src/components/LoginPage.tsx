@@ -24,6 +24,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onBack, onSwitchToSignup
     
     try {
       await signInWithEmail(email, password);
+      alert('Login successful!');
       onLogin();
     } catch (error: any) {
       console.error('Login error:', error);

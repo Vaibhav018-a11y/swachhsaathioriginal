@@ -53,6 +53,7 @@ const SignupPage: React.FC<SignupPageProps> = ({ onSignup, onBack, onSwitchToLog
       };
 
       await signUpWithEmail(formData.email, formData.password, userData);
+      alert('Signup successful! You can now use your account.');
       onSignup();
     } catch (error: any) {
       console.error('Signup error:', error);
