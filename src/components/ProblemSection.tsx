@@ -26,7 +26,7 @@ const ProblemSection: React.FC = () => {
         <div className="animate-fade-in">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-16">
             Tired of the Daily 
-            <span className="text-red-500"> Garbage Gamble?</span>
+            <span className="text-green-500"> Garbage Gamble?</span>
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
@@ -39,7 +39,7 @@ const ProblemSection: React.FC = () => {
                 <div className="w-16 h-16 mx-auto mb-6 bg-red-100 rounded-full flex items-center justify-center group-hover:bg-red-500 transition-colors duration-300">
                   <problem.icon 
                     size={32} 
-                    className="text-red-500 group-hover:text-white transition-colors duration-300 fill-current" 
+                    className="text-green-500 group-hover:text-white transition-colors duration-300 fill-current" 
                   />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">{problem.title}</h3>

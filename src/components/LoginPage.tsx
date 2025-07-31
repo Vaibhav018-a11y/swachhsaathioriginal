@@ -77,7 +77,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onBack, onSwitchToSignup
               <span className="text-white font-bold text-xl">SS</span>
             </div>
             <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome Back</h1>
-            <p className="text-gray-600">Sign in to your Swachh Saathi account</p>
+            <p className="text-gray-600">Sign in to your स्वच्छ Saathi account</p>
           </div>
 
           {/* Login Type Toggle */}

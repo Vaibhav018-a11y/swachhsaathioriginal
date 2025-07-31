@@ -7,12 +7,12 @@ const SolutionSection: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
-              Introducing <span className="text-green-500">Swachh Saathi:</span>
+              Introducing <span className="text-green-500">स्वच्छ Saathi:</span>
               <span className="block mt-2">Your Cleanliness Companion</span>
             </h2>
             
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-8">
-              Swachh Saathi is a free, reliable tool designed for citizens who want to stay informed 
+              स्वच्छ Saathi is a free, reliable tool designed for citizens who want to stay informed 
               about garbage collection in their area. Track waste management vehicles in real-time, 
               receive smart notifications, and contribute to a cleaner, smarter city.
             </p>
@@ -36,7 +36,7 @@ const SolutionSection: React.FC = () => {
           <div className="animate-fade-in-right">
             <div className="relative">
               <img 
-                src="https://images.pexels.com/photos/3585088/pexels-photo-3585088.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop" 
+                src="public/after&before.jpg" 
                 alt="Swachh Saathi App Interface Mockup"
                 className="w-full h-auto rounded-3xl shadow-2xl"
               />

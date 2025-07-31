@@ -13,7 +13,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onLoginClick, onSignupClick }
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url("https://images.pexels.com/photos/3639542/pexels-photo-3639542.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop")',
+          backgroundImage: "url('public/background.jpg')",
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
@@ -79,7 +79,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onLoginClick, onSignupClick }
                   {/* The actual image/screen */}
                   <img 
                     // Using a more relevant image for the app UI
-                    src="https://images.pexels.com/photos/14844391/pexels-photo-14844391.jpeg?auto=compress&cs=tinysrgb&w=600&h=1200&fit=crop"
+                    src="public/mobile photo.jpg"
                     className="w-full h-full object-cover" 
                     alt="App showing a map with a truck location" 
                   />
@@ -93,3 +93,4 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onLoginClick, onSignupClick }
 };
 
 export default HeroSection;
+
