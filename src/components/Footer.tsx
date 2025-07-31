@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
-               <img src="123.jpg" alt="Swachh Saathi Logo" className="h-10 w-10 rounded-lg object-cover" />
+               <img src="/123.jpg" alt="Swachh Saathi Logo" className="h-10 w-10 rounded-lg object-cover" />
               </div>
              <span className="text-xl font-bold text-gray-100">
   <span className="text-green-600">स्वच्छ</span> Saathi

@@ -71,7 +71,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, setActiveSection
           
           {/* Logo and App Name */}
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => handleSectionChange('home')}>
-            <img src="123.jpg" alt="Swachh Saathi Logo" className="h-10 w-10 rounded-lg object-cover" />
+            <img src="/123.jpg" alt="Swachh Saathi Logo" className="h-10 w-10 rounded-lg object-cover" />
           <span className="text-xl font-bold text-gray-800">
   <span className="text-green-600">स्वच्छ</span> Saathi
 </span>

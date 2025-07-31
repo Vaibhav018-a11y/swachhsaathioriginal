@@ -36,7 +36,7 @@ const SolutionSection: React.FC = () => {
           <div className="animate-fade-in-right">
             <div className="relative">
               <img 
-                src="public/after&before.jpg" 
+                src="/after&before.jpg" 
                 alt="Swachh Saathi App Interface Mockup"
                 className="w-full h-auto rounded-3xl shadow-2xl"
               />

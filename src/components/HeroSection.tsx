@@ -13,7 +13,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onLoginClick, onSignupClick }
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('public/background.jpg')",
+          backgroundImage: "url('/background.jpg')",
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
@@ -79,7 +79,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onLoginClick, onSignupClick }
                   {/* The actual image/screen */}
                   <img 
                     // Using a more relevant image for the app UI
-                    src="public/mobile photo.jpg"
+                    src="/mobile photo.jpg"
                     className="w-full h-full object-cover" 
                     alt="App showing a map with a truck location" 
                   />
