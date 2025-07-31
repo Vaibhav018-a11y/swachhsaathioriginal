@@ -85,7 +85,7 @@ const AITipsModal: React.FC<AITipsModalProps> = ({ isOpen, onClose }) => {
           const parsedTips: Array<{ title: string; tip: string; category?: string }> = JSON.parse(cleanedJsonString);
           const finalTips = parsedTips.map(tip => ({
             ...tip,
-            icon: tip.category && iconMap.hasOwnProperty(tip.category)
+            icon: tip.category && Object.prototype.hasOwnProperty.call(iconMap, tip.category)
               ? iconMap[tip.category as keyof typeof iconMap]
               : Recycle
           }));

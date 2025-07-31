@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Eye, EyeOff, Mail, Lock, ArrowRight, Smartphone, Shield, User, Phone, Building, Check, ArrowLeft } from 'lucide-react';
+import { Eye, EyeOff, Mail, Lock, ArrowRight, Smartphone, Phone, Building, Check, ArrowLeft } from 'lucide-react';
 import { signUpWithEmail } from '../firebase/auth';
 import { getFirebaseErrorMessage } from '../utils/errorHandler';
 import LoadingSpinner from './LoadingSpinner';
@@ -55,9 +55,10 @@ const SignupPage: React.FC<SignupPageProps> = ({ onSignup, onBack, onSwitchToLog
       await signUpWithEmail(formData.email, formData.password, userData);
       alert('Signup successful! You can now use your account.');
       onSignup();
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Signup error:', error);
-      const errorMessage = getFirebaseErrorMessage(error.code);
+      const errorCode = (error as { code?: string })?.code;
+      const errorMessage = getFirebaseErrorMessage(errorCode || 'unknown-error');
       alert(errorMessage);
     } finally {
       setIsLoading(false);

@@ -101,7 +101,7 @@ const RouteMap: React.FC<RouteMapProps> = ({ onBack }) => {
               <h2 className="text-xl font-bold text-gray-900 mb-6">Active Vehicles</h2>
               
               <div className="space-y-4">
-                {truckData.map((truck, index) => (
+                {truckData.map((truck) => (
                   <div key={truck.id} className="border border-gray-200 rounded-2xl p-4">
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center space-x-2">

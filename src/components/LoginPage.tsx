@@ -26,9 +26,10 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onBack, onSwitchToSignup
       await signInWithEmail(email, password);
       alert('Login successful!');
       onLogin();
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Login error:', error);
-      const errorMessage = getFirebaseErrorMessage(error.code);
+      const errorCode = (error as { code?: string })?.code;
+      const errorMessage = getFirebaseErrorMessage(errorCode || 'unknown-error');
       alert(errorMessage);
     } finally {
       setIsLoading(false);
@@ -44,9 +45,10 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onBack, onSwitchToSignup
     try {
       await resetPassword(email);
       alert('Password reset email sent! Check your inbox.');
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Password reset error:', error);
-      const errorMessage = getFirebaseErrorMessage(error.code);
+      const errorCode = (error as { code?: string })?.code;
+      const errorMessage = getFirebaseErrorMessage(errorCode || 'unknown-error');
       alert(errorMessage);
     }
   };

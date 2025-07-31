@@ -27,72 +27,52 @@ export const signUpWithEmail = async (
   password: string, 
   userData: Omit<UserData, 'uid' | 'createdAt'>
 ): Promise<UserCredential> => {
-  try {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    
-    // Update user profile
-    await updateProfile(userCredential.user, {
-      displayName: `${userData.firstName} ${userData.lastName}`
-    });
+  const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+  
+  // Update user profile
+  await updateProfile(userCredential.user, {
+    displayName: `${userData.firstName} ${userData.lastName}`
+  });
 
-    // Save additional user data to Firestore
-    const userDoc = {
-      ...userData,
-      uid: userCredential.user.uid,
-      createdAt: new Date()
-    };
+  // Save additional user data to Firestore
+  const userDoc = {
+    ...userData,
+    uid: userCredential.user.uid,
+    createdAt: new Date()
+  };
 
-    // Remove undefined fields
-    Object.keys(userDoc).forEach(
-      (key) => (userDoc as any)[key] === undefined && delete (userDoc as any)[key]
-    );
+  // Remove undefined fields
+  Object.keys(userDoc).forEach(
+    (key) => (userDoc as Record<string, unknown>)[key] === undefined && delete (userDoc as Record<string, unknown>)[key]
+  );
 
-    await setDoc(doc(db, 'users', userCredential.user.uid), userDoc);
+  await setDoc(doc(db, 'users', userCredential.user.uid), userDoc);
 
-    return userCredential;
-  } catch (error) {
-    throw error;
-  }
+  return userCredential;
 };
 
 // Sign in with email and password
 export const signInWithEmail = async (email: string, password: string): Promise<UserCredential> => {
-  try {
-    return await signInWithEmailAndPassword(auth, email, password);
-  } catch (error) {
-    throw error;
-  }
+  return await signInWithEmailAndPassword(auth, email, password);
 };
 
 // Sign out
 export const signOutUser = async (): Promise<void> => {
-  try {
-    await signOut(auth);
-  } catch (error) {
-    throw error;
-  }
+  await signOut(auth);
 };
 
 // Reset password
 export const resetPassword = async (email: string): Promise<void> => {
-  try {
-    await sendPasswordResetEmail(auth, email);
-  } catch (error) {
-    throw error;
-  }
+  await sendPasswordResetEmail(auth, email);
 };
 
 // Get user data from Firestore
 export const getUserData = async (uid: string): Promise<UserData | null> => {
-  try {
-    const userDoc = await getDoc(doc(db, 'users', uid));
-    if (userDoc.exists()) {
-      return userDoc.data() as UserData;
-    }
-    return null;
-  } catch (error) {
-    throw error;
+  const userDoc = await getDoc(doc(db, 'users', uid));
+  if (userDoc.exists()) {
+    return userDoc.data() as UserData;
   }
+  return null;
 };
 
 // Get current user
